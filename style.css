@@ -1,0 +1,19 @@
+/* CSS HEX */
+:root {
+	--midnight-violet: #242038ff;
+	--slate-blue: #725ac1ff;
+	--soft-periwinkle: #8d86c9ff;
+	--pale-slate: #cac4ceff;
+	--linen: #f7ece1ff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: var(--midnight-violet);
+}
