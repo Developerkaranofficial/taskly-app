@@ -16,4 +16,26 @@
 html,
 body {
 	background-color: var(--midnight-violet);
+	height: 100%;
+	width: 100%;
+}
+
+nav {
+	position: relative;
+	background-color: var(--pale-slate);
+	height: 5rem;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 1px 16px 4px var(--slate-blue);
+}
+
+.taskly-logo {
+	position: absolute;
+	background-image: url(src/Group\ 3.svg);
+	background-size: cover;
+	height: 62px;
+	width: 13em;
+	padding-top: 12px;
+	margin: 0px 12px;
 }
