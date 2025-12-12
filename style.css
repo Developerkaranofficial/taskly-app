@@ -93,6 +93,8 @@ nav {
 	border: none;
 	border-radius: 8px;
 	font-size: 1.3rem;
+	font-weight: semi-bold;
+	color: var(--soft-periwinkle);
 }
 
 .input-fields > .input-title {
@@ -107,4 +109,45 @@ nav {
 	background-color: var(--slate-blue);
 	padding: 8px 24px;
 	border-radius: 0 14px 14px 0;
+}
+
+.input-fields input:focus {
+	border: none;
+	outline: 3px solid var(--soft-periwinkle);
+}
+
+.tasks {
+	/* display: grid; */
+	height: 100%;
+	width: 100%;
+	/* background-color: white; */
+}
+
+.task {
+	display: flex;
+	background-color: var(--slate-blue);
+	min-height: 8.2rem;
+	width: 25vw;
+	color: var(--linen);
+	padding: 20px;
+	border-radius: 10px;
+	margin: 36px;
+}
+
+.task p {
+	color: var(--pale-slate);
+	width: 70%;
+	font-size: 0.9rem;
+}
+
+.task-1 {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.icons {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
