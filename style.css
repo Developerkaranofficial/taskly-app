@@ -155,3 +155,19 @@ nav {
 	flex-direction: column;
 	justify-content: space-between;
 }
+
+.icons svg {
+	min-height: 28px;
+	min-width: 28px;
+	padding: 2px;
+	font-size: 3rem;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+.icons svg:hover {
+	/* padding: 1.5px; */
+	background-color: var(--linen);
+	fill: var(--slate-blue);
+	transform: scale(1.05);
+}
