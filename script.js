@@ -1,11 +1,13 @@
 const taskTitle = document.querySelector(".input-title");
 const taskDetail = document.querySelector(".input-detail");
 const tasks = document.querySelector(".tasks");
-const addTask = document.querySelector(".add-task");
+// const addTask = document.querySelector(".add-task");
+const submitForm = document.querySelector(".input-fields");
 
 let taskArr = [];
 
-addTask.addEventListener("click", () => {
+submitForm.addEventListener("submit", (e) => {
+	e.preventDefault();
 	const title = taskTitle.value.trim();
 	const detail = taskDetail.value.trim();
 
@@ -18,19 +20,30 @@ addTask.addEventListener("click", () => {
 		};
 		taskArr.push(taskObj);
 		updateTaskContainer();
-		console.log(taskArr);
 	}
+	taskTitle.value = "";
+	taskDetail.value = "";
 });
 
 tasks.addEventListener("click", (e) => {
 	const deleteBtn = e.target.closest(".delete-btn");
-	let taskWrap;
+	const editbtn = e.target.closest(".edit-btn");
 
-	if (deleteBtn !== null) {
-		taskWrap = Number(deleteBtn.closest(".task").id);
-		taskArr = taskArr.filter((task) => task.id !== taskWrap);
+	if (deleteBtn) {
+		const id = Number(deleteBtn.closest(".task").id);
+		taskArr = taskArr.filter((task) => task.id !== id);
+		updateTaskContainer();
 	}
-	updateTaskContainer();
+
+	if (editbtn) {
+		const id = Number(editbtn.closest(".task").id);
+		const foundTask = taskArr.find((task) => task.id === id);
+		taskTitle.value = foundTask.title;
+		taskDetail.value = foundTask.detail;
+
+		taskArr = taskArr.filter((task) => task.id !== id);
+		updateTaskContainer();
+	}
 });
 
 function updateTaskContainer() {
@@ -55,7 +68,7 @@ function updateTaskContainer() {
 <svg class="delete-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" 
                  fill="#e3e3e3"> 
                  <path 
-                   d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" /> -->
+                   d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
                </svg> 
              </div> 
             </div>
