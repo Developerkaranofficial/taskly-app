@@ -171,3 +171,9 @@ nav {
 	fill: var(--slate-blue);
 	transform: scale(1.05);
 }
+
+.completed-task {
+	text-decoration: line-through;
+	background-color: var(--soft-periwinkle);
+	transition: all 0.2s ease;
+}
